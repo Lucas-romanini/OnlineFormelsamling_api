@@ -14,7 +14,7 @@ namespace OnlineFormelsamling_api.Controllers
         public ActionResult Index()
         {
             ViewBag.test = "Testing testing testing";
-                return View(fof.Get(1));
+                return View(fof.GetAll());
         }
     }
 }

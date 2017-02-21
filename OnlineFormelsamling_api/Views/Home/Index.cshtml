@@ -1,4 +1,6 @@
-﻿@model RepoOF.FormlerOF
+﻿@using RepoOF
+@model List<FormlerOF>
+
 
 @{
     ViewBag.Title = "Index";
@@ -8,5 +10,8 @@
 
 @ViewBag.test
 
+@foreach (var n in Model) {
 
-<p>@Model.Navn</p>
+    <p>@n.Navn</p>
+
+}

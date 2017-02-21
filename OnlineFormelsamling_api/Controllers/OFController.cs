@@ -18,7 +18,7 @@ namespace OnlineFormelsamling_api.Controllers
         FormlerOFFac fof = new FormlerOFFac();
 
         // GET: Home
-        [Route("api/OF/Index")]
+        [Route("api/OF/GetPosts")]
         [HttpGet]
         public IEnumerable<FormlerOF> GetPosts()
         {
