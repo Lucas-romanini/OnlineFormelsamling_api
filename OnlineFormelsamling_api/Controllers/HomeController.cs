@@ -16,5 +16,11 @@ namespace OnlineFormelsamling_api.Controllers
             ViewBag.test = "Testing testing testing";
                 return View(fof.GetAll());
         }
+
+        public ActionResult test()
+        {
+            return View();
+        }
+
     }
 }

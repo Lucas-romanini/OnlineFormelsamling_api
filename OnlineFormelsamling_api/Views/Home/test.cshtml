@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "test";
+}
+
+<h2>test</h2>
+
+<form onsubmit="event.preventDefault(); Udregn();">
+    <input type="number" id="radius1" />
+    <input type="submit" value="udregn">
+
+    <p>
+        Resultat:<span id="resultat"></span>
+    </p>
+</form>
+
+
+    <script>
+        function Udregn() {
+         
+            var radius1 = $("#radius1").val();
+
+            var areal = Math.PI + Math.pow(radius1, 2);
+
+            $("#resultat").html(areal);
+
+            return false;
+            
+        }
+
+    </script>

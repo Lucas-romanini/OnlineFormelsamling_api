@@ -1,15 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 using RepoOF;
 using RepoOF.Helpers;
 
 namespace OnlineFormelsamling_api.Controllers
 {
-    public class OFController : Controller
+    public class OFController : ApiController
     {
+        // GET api/<controller>
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET api/<controller>/5
+        public string Get(int id)
+        {
+            return "value";
+        }
+
+        // POST api/<controller>
+        public void Post([FromBody]string value)
+        {
+        }
+
+        // PUT api/<controller>/5
+        public void Put(int id, [FromBody]string value)
+        {
+        }
+
+        // DELETE api/<controller>/5
+        public void Delete(int id)
+        {
+        }
 
         Areal areal = new Areal();
         RumfangOgOverflade ROO = new RumfangOgOverflade();
@@ -25,21 +52,27 @@ namespace OnlineFormelsamling_api.Controllers
             return fof.GetAll();
         }
 
+        [Route("api/OF/Index/{id}")]
+        [HttpGet]
+        public FormlerOF Index(int id)
+        {
+            return fof.Get(id);
+        }
 
 
+        //▼▼▼Matematiske ting▼▼▼
 
+        //▼▼▼Cirkel▼▼▼
+        [Route("api/OF/Cirkel/{id}")]
+        [HttpGet]
+        public FormlerOF Cirkelstring (/*string radius1*/ int id)
+        {
+            //double rad1 = Convert.ToDouble(radius1);
 
+            //double result1 = areal.CirkelAreal(rad1);
 
-        ////▼▼▼Matematiske ting▼▼▼
-
-        ////▼▼▼Cirkel▼▼▼
-        //[Route("api/OF/Cirkel")]
-        
-        //public ActionResult Cirkel()
-        //{
-
-        //    return View();
-        //}
+            return fof.Get(id);
+        }
 
         //[HttpPost]
         //public ActionResult Cirkel(string radius1, string radius2, string diameter)
@@ -284,7 +317,5 @@ namespace OnlineFormelsamling_api.Controllers
 
         //    return View();
         //}
-
     }
-
 }
