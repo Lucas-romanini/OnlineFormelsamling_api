@@ -63,7 +63,7 @@ namespace OnlineFormelsamling_api.Controllers
         //▼▼▼Matematiske ting▼▼▼
 
         //▼▼▼Cirkel▼▼▼
-        [Route("api/OF/Cirkel/{id}")]
+        [Route("api/OF/Udregninger/{id}")]
         [HttpGet]
         public FormlerOF Cirkelstring (/*string radius1*/ int id)
         {
